@@ -1,0 +1,4 @@
+#!/bin/sh
+
+swaymsg workspace '9'
+[ $(pgrep -c fmu) -eq 0 ] && swaymsg exec 'footclient fmu'
