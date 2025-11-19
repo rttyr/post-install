@@ -1,0 +1,19 @@
+#!/bin/sh
+
+cd "$(xdg-user-dir MUSIC)" || exit 1
+
+library=$(fd -u | sort -V ); [ -z "$library" ]
+library_size=$(printf '%s' "$library" | wc -l)
+
+rotation_point=$(shuf -i 0-$library_size -n 1); rotation_point=$((rotation_point + 1))
+
+top=$(printf '%s' "$library" | tail -n$rotation_point)
+bottom=$(printf '%s' "$library" | head -n$(( library_size - rotation_point + 1 )))
+
+printf '%s\n%s' "$top" "$bottom" | fzf -e -m -q^ --cycle --no-sort --reverse \
+    --bind 'enter:execute-multi(clear;  mpv --no-audio-display                 {})' \
+    --bind 'ctrl-r:execute-multi(clear; mpv --no-audio-display --loop-playlist {})' \
+    --bind 'ctrl-s:execute-multi(clear; mpv --no-audio-display --shuffle       {})' \
+    --bind 'ctrl-a:deselect-all' \
+    --bind 'left:page-up,right:page-down'
+clear
