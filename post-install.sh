@@ -5,6 +5,7 @@ set -e
 pkgs=(
     7zip
     audacity
+    base-devel
     bash-completion
     bc
     brightnessctl
