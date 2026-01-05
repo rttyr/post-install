@@ -73,9 +73,9 @@ pkgs_aur=(
     sudo sed -i 's/#Color/Color/' /etc/pacman.conf
     sudo pacman --needed --noconfirm -Syu "${pkgs[@]}"
 
-    git clone https://aur.archlinux.org/yay-git.git
-        (cd yay-git && makepkg --noconfirm -si)
-    yay --needed --noconfirm -Syu "${pkgs_aur[@]}"
+    git clone https://aur.archlinux.org/paru.git
+        (cd paru && makepkg --noconfirm -si)
+    paru --needed --noconfirm -Syu "${pkgs_aur[@]}"
 
 # dotfiles
     cp -r home_dir/. ~
