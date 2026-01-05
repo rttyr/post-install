@@ -61,8 +61,6 @@ pkgs=(
 )
 
 pkgs_aur=(
-    arc-icon-theme
-    arc-solid-gtk-theme
     brave-bin
     jmtpfs
     mp3val
@@ -82,9 +80,6 @@ pkgs_aur=(
     chmod +x ~/bin/*
 
 # config (auto)
-    gsettings set org.gnome.desktop.interface gtk-theme  'Arc-Dark-solid'
-    gsettings set org.gnome.desktop.interface icon-theme 'Arc'
-
     printf 'kernel.unprivileged_userns_clone=1\n' | sudo tee /etc/sysctl.d/00-local-userns.conf
 
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
