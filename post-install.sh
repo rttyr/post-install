@@ -20,6 +20,7 @@ pkgs=(
     gammastep
     gnome-disk-utility
     gnome-keyring
+    gnome-themes-extra
     gparted
     grim
     gvfs
@@ -36,6 +37,7 @@ pkgs=(
     noto-fonts-extra
     nsxiv
 #   nvidia-open
+    nwg-look
     openresolv
     pulsemixer
     qbittorrent
