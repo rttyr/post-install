@@ -6,6 +6,7 @@ audacity
 gnome-disks
 keepassxc
 nwg-displays
+nwg-look
 qbittorrent' | fzf -e -q^ --cycle --no-sort --reverse \
     --bind 'left:page-up,right:page-down')
 [ -z "$bin" ] && exit 0
