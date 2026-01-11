@@ -12,13 +12,10 @@ bindsym --no-repeat mod4+n      exec $term nvim notes
 bindsym --no-repeat mod4+p      exec $term pulsemixer
 bindsym --no-repeat mod4+s      exec $term cdt
 
-bindsym --no-repeat mod4+g      exec pkill -USR1 gammastep || gammastep -O 2500
+bindsym --no-repeat mod4+g      exec pkill -USR1 gammastep || gammastep -O 3000
 bindsym --no-repeat mod4+l      exec swaylock -c 404040 -e
 bindsym --no-repeat mod4+a      exec thunar
 bindsym --no-repeat mod4+c      exec printf '' | wl-copy & dunstify -t 2000 'Cleared.'
-
-bindsym --no-repeat shift+print exec grim
-bindsym --no-repeat print       exec grim -g "$(slurp)" - | wl-copy
 
 # bindings (2/3)
 
@@ -32,6 +29,11 @@ bindsym --locked --no-repeat XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SI
 
 bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+
+bindsym --no-repeat mod4+shift+w exec grim
+bindsym --no-repeat shift+print  exec grim
+bindsym --no-repeat mod4+w       exec grim -g "$(slurp)" - | wl-copy
+bindsym --no-repeat print        exec grim -g "$(slurp)" - | wl-copy
 
 # bindings (3/3)
 
