@@ -2,6 +2,7 @@
 
 bin=$(printf 'brave
 brave --incognito
+anki
 audacity
 gnome-disks
 keepassxc
