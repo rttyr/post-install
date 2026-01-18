@@ -63,6 +63,7 @@ pkgs=(
 )
 
 pkgs_aur=(
+    anki-bin
     brave-bin
     jmtpfs
     mp3val
